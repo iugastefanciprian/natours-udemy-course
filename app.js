@@ -7,6 +7,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 
 const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
@@ -110,6 +111,8 @@ app.use(
     ],
   })
 );
+
+app.use(compression());
 
 // Test middleware
 app.use((req, res, next) => {

@@ -12568,15 +12568,14 @@ function () {
         case 0:
           _context.prev = 0;
           url = type === 'password' ? '/api/v1/users/updatePassword' : '/api/v1/users/updateProfile';
-          console.log(url);
-          _context.next = 5;
+          _context.next = 4;
           return (0, _axios.default)({
             method: 'PATCH',
             url: url,
             data: data
           });
 
-        case 5:
+        case 4:
           res = _context.sent;
 
           if (res.data.status === 200) {
@@ -12586,19 +12585,19 @@ function () {
             }, 200);
           }
 
-          _context.next = 12;
+          _context.next = 11;
           break;
 
-        case 9:
-          _context.prev = 9;
+        case 8:
+          _context.prev = 8;
           _context.t0 = _context["catch"](0);
           (0, _alert.showAlert)('error', _context.t0.response.data.message);
 
-        case 12:
+        case 11:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[0, 9]]);
+    }, _callee, null, [[0, 8]]);
   }));
 
   return function updateSettings(_x, _x2) {
@@ -12647,28 +12646,26 @@ function () {
 
         case 4:
           session = _context.sent;
-          console.log(session); // 2) Create checkout form + charge the credit card
-
-          _context.next = 8;
+          _context.next = 7;
           return stripe.redirectToCheckout({
             sessionId: session.data.session.id
           });
 
-        case 8:
-          _context.next = 14;
+        case 7:
+          _context.next = 12;
           break;
 
-        case 10:
-          _context.prev = 10;
+        case 9:
+          _context.prev = 9;
           _context.t0 = _context["catch"](0);
-          console.log(_context.t0);
+          // console.log(err);
           (0, _alert.showAlert)('error', _context.t0);
 
-        case 14:
+        case 12:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[0, 10]]);
+    }, _callee, null, [[0, 9]]);
   }));
 
   return function bookTour(_x) {

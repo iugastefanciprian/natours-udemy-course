@@ -166,11 +166,11 @@ tourSchema.pre(/^find/, function (next) {
   next();
 });
 
-tourSchema.post(/^find/, function (docs, next) {
-  console.log('Query took: ', Date.now() - this.start, 'ms');
+// tourSchema.post(/^find/, function (docs, next) {
+//   console.log('Query took: ', Date.now() - this.start, 'ms');
 
-  next();
-});
+//   next();
+// });
 
 // Aggregating middleware
 // tourSchema.pre('aggregate', function (next) {
