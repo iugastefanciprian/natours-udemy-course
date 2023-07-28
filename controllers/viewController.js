@@ -36,25 +36,22 @@ exports.getTour = catchAsync(async (req, res, next) => {
 exports.login = (req, res, next) => {
   res
     .status(200)
-    .set(
-      'Content-Security-Policy',
-      "connect-src 'self' https://cdnjs.cloudflare.com"
-    )
+
     .render('login', {
       title: 'Log in',
     });
 };
 
+exports.signup = (req, res, next) => {
+  res.status(200).render('signup', {
+    title: 'Sign Up',
+  });
+};
+
 exports.getAccount = (req, res, next) => {
-  res
-    .status(200)
-    .set(
-      'Content-Security-Policy',
-      "connect-src 'self' https://cdnjs.cloudflare.com"
-    )
-    .render('account', {
-      title: 'Account Details',
-    });
+  res.status(200).render('account', {
+    title: 'Account Details',
+  });
 };
 
 exports.getMyTours = catchAsync(async (req, res, next) => {

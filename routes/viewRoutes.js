@@ -12,6 +12,7 @@ router.post(
   authController.protect,
   viewController.updateUserData
 );
+router.get('/signup', viewController.signup);
 
 router.use(authController.isLoggedIn);
 router.get(
